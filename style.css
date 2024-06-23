@@ -1,0 +1,173 @@
+body {
+    background: rgb(124, 72, 159);
+    background: linear-gradient(
+        90deg,
+        rgb(35, 96, 111) 0%,
+        rgba(43, 31, 221, 1) 20%,
+        rgb(69, 252, 209) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.318);
+    color: black;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.timer {
+    font-size: 40px;
+    background-color: #ffffff4e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(213, 187, 187, 0.1);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+.timer span {
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+button,
+.start {
+    font-size: 1rem;
+    background-color: rgb(81, 246, 246);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover,
+.start:hover {
+    background-color: rgb(60, 213, 213);
+}
+
+.stop:hover {
+    background-color: rgb(244, 0, 0);
+}
+
+.pause:hover {
+    background-color: yellow;
+}
+
+.reset:hover {
+    background-color: white;
+}
+
+statBtn:hover {
+    background-color: rgb(60, 213, 213);
+}
+
+.lap-title {
+    font-size: 1.2rem;
+}
+
+.laps {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: rgba(255, 255, 255, 0.29);
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgb(95, 85, 85);
+}
+
+li {
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    font-weight: 700;
+}
+
+.txt {
+    font-size: 18px;
+    color: #050500;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and larger screens */
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+    }
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 80%;
+    }
+
+    .timer {
+        font-size: 30px;
+        padding: 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    button,
+    .start,
+    .stop,
+    .pause,
+    .reset,
+    statBtn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
